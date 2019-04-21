@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".DetalheActivity">
+
+    <include layout="@layout/toolbar"
+        android:id="@+id/toolbar_main" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="130dp"
+                    android:layout_height="match_parent"
+                    android:contentDescription="@string/content_description_poster"
+                    android:id="@+id/image_view_poster_detalhe"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="4dp"
+                        android:id="@+id/text_view_nome_detalhe"
+                        android:textSize="20sp"
+                        android:textColor="@color/colorBlack"
+                        android:textStyle="bold"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="4dp"
+                        android:id="@+id/text_view_ano_detalhe"
+                        android:textSize="16sp"
+                        android:textColor="@color/colorBlack" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="4dp"
+                        android:id="@+id/text_view_nota_detalhe"
+                        android:textSize="16sp"
+                        android:textColor="@color/colorBlack" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="4dp"
+                        android:id="@+id/text_view_genero_detalhe"
+                        android:textSize="16sp"
+                        android:textColor="@color/colorBlack" />
+
+                    <ImageView
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:layout_gravity="start"
+                        android:paddingStart="4dp"
+                        android:paddingEnd="4dp"
+                        android:src="@drawable/ic_action_unfavorite"
+                        android:contentDescription="@string/content_description_poster"
+                        android:id="@+id/image_view_favorito"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="4dp"
+                android:text="@string/text_view_sinopose"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:textColor="@color/colorBlack" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="4dp"
+                android:id="@+id/text_view_sinopse_detalhe"
+                android:textSize="16sp"
+                android:textColor="@color/colorBlack" />
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

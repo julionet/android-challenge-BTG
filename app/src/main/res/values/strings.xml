@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Desafio BTG</string>
+    <string name="content_description_poster">Poster do filme</string>
+    <string name="porfavor_aguarde">Por favor aguarde!</string>
+    <string name="carregando_informacoes">Carregando informações…</string>
+    <string name="carregando_filmes">Carregando filmes…</string>
+    <string name="content_description_splash">Texto splash</string>
+    <string name="text_view_sinopose">Sinopse</string>
+    <string name="menu_search">Pesquisar</string>
+    <string name="menu_ordenar_title">Ordenar por Título</string>
+    <string name="menu_ordenar_ano">Ordernar por Ano</string>
+</resources>
