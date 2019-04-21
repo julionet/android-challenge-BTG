@@ -55,6 +55,10 @@ public class FilmesFragment extends Fragment {
         this._fragment = fragment;
     }
 
+    public void set_pesquisando(boolean pesquisando) {
+        _adapter.setSearched(pesquisando);
+    }
+
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
@@ -171,6 +175,7 @@ public class FilmesFragment extends Fragment {
                         updateAdapterRecyclerView();
                         swipeRefreshLayoutFilmes.setRefreshing(false);
                         _adapter.setLoaded(false);
+                        _adapter.setSearched(false);
                     }
                 });
             }

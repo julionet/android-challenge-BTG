@@ -36,7 +36,8 @@ public class FilmesAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
     private FavoritosFragment _fragment;
 
     private int visibleThreshold = 5;
-    private boolean loading;
+    private boolean _loading;
+    private boolean _searching;
 
     public FilmesAdapter(Context context, List<Movie> filmes, boolean favorito, FilmeOnClickListener filmeOnClickListener,
                          FavoritosFragment fragment, RecyclerView recyclerView)  {
@@ -58,11 +59,11 @@ public class FilmesAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
                     int totalItemCount = linearLayoutManager.getItemCount();
                     int lastVisibleItem = linearLayoutManager
                             .findLastVisibleItemPosition();
-                    if (!loading && totalItemCount <= (lastVisibleItem + visibleThreshold)) {
+                    if (!_searching && !_loading && totalItemCount <= (lastVisibleItem + visibleThreshold)) {
                         if (_filmeOnLoadMoreListener != null) {
                             _filmeOnLoadMoreListener.onLoadMore();
                         }
-                        loading = true;
+                        _loading = true;
                     }
                 }
             }
@@ -136,7 +137,11 @@ public class FilmesAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
     }
 
     public void setLoaded(boolean loading) {
-        this.loading = loading;
+        this._loading = loading;
+    }
+
+    public void setSearched(boolean searching) {
+        this._searching = searching;
     }
 
     private class ViewHolderFilmes extends RecyclerView.ViewHolder {

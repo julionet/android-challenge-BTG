@@ -110,6 +110,9 @@ public class MainActivity extends AppCompatActivity {
                     fragmentFavorito.updateAdapterRecyclerView();
                 }
                 return true;
+            case R.id.menu_search:
+                fragmentFilme.set_pesquisando(true);
+                return true;
             default:
                 return super.onOptionsItemSelected(item);
         }
