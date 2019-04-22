@@ -11,6 +11,7 @@ import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -47,6 +48,8 @@ public class FilmesFragment extends Fragment {
     public FilmesAdapter _adapter;
     FavoritosFragment _fragment;
 
+    MenuItem _menuItemSearch;
+
     public FilmesFragment() {
 
     }
@@ -57,6 +60,10 @@ public class FilmesFragment extends Fragment {
 
     public void set_pesquisando(boolean pesquisando) {
         _adapter.setSearched(pesquisando);
+    }
+
+    public void set_menuItemSearch(MenuItem menuItemSearch) {
+        this._menuItemSearch = menuItemSearch;
     }
 
     @Override
@@ -114,6 +121,8 @@ public class FilmesFragment extends Fragment {
         _movies = MovieController.selecionarTodos(_context, Preferences.getString(_context, Constantes.MOVIE_ORDER));
         _adapter.setList(_movies);
         _adapter.notifyDataSetChanged();
+        if (_menuItemSearch != null)
+            _menuItemSearch.collapseActionView();
     }
 
     private FilmesAdapter.FilmeOnClickListener onClickItem() {

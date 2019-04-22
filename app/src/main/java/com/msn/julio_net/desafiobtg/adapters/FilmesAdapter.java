@@ -36,8 +36,8 @@ public class FilmesAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
     private FavoritosFragment _fragment;
 
     private int visibleThreshold = 5;
-    private boolean _loading;
-    private boolean _searching;
+    private boolean _loading = false;
+    private boolean _searching = false;
 
     public FilmesAdapter(Context context, List<Movie> filmes, boolean favorito, FilmeOnClickListener filmeOnClickListener,
                          FavoritosFragment fragment, RecyclerView recyclerView)  {

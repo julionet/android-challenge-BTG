@@ -65,7 +65,21 @@ public class MainActivity extends AppCompatActivity {
         getMenuInflater().inflate(R.menu.menu_search, menu);
 
         MenuItem item = menu.findItem(R.id.menu_search);
-        item.collapseActionView();
+        item.setOnActionExpandListener(new MenuItem.OnActionExpandListener() {
+            @Override
+            public boolean onMenuItemActionExpand(MenuItem menuItem) {
+                fragmentFilme.set_pesquisando(true);
+                return true;
+            }
+
+            @Override
+            public boolean onMenuItemActionCollapse(MenuItem menuItem) {
+                fragmentFilme.set_pesquisando(false);
+                return true;
+            }
+        });
+        fragmentFilme.set_menuItemSearch(item);
+        //item.collapseActionView();
 
         SearchView searchView = (SearchView) item.getActionView();
         searchView.setImeOptions(EditorInfo.IME_ACTION_DONE);
